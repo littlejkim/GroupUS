@@ -7,5 +7,8 @@
     <string name="action_three_day_view">3 day view</string>
     <string name="action_week_view">Week view</string>
     <string name="title_activity_basic">GroupUS</string>
+    <string name="add_member">Add Member</string>
+    <string name="email">Email</string>
+    <string name="add">ADD</string>
 
 </resources>

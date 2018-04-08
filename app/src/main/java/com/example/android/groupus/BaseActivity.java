@@ -1,11 +1,14 @@
 package com.example.android.groupus;
 
+import android.content.Intent;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.alamkanak.weekview.DateTimeInterpreter;
@@ -27,11 +30,27 @@ public abstract class BaseActivity extends AppCompatActivity implements WeekView
     private int mWeekViewType = TYPE_THREE_DAY_VIEW;
     private WeekView mWeekView;
 
+    /* add button is not working
+    public Button add;
+
+        public void init(){
+            add = (Button)findViewById(R.id.action_add_member);
+            add.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent adding = new Intent(BaseActivity.this, AddActivity.class);
+                }
+            });
+    }
+    */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
+    /* go with add button
+        init();
+    */
 
         // Get a reference for the week view in the layout.
         mWeekView = (WeekView) findViewById(R.id.weekView);
@@ -68,6 +87,8 @@ public abstract class BaseActivity extends AppCompatActivity implements WeekView
         switch (id){
             case R.id.action_today:
                 mWeekView.goToToday();
+                return true;
+            case R.id.action_add_member:
                 return true;
             case R.id.action_day_view:
                 if (mWeekViewType != TYPE_DAY_VIEW) {
